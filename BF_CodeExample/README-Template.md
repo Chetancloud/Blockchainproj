@@ -1,62 +1,60 @@
 # Project Title
 
-Simple overview of use/purpose.
+* ERC20 Smart Contract Deployment and Token Distribution on Ropsten Network
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
-
+*This project demonstrates the methodology to modify ERC20 smart contract deployment in a way which enables it to create a node js application that distributes the equal number of tokens on multiple Metamask accounts at once.This report will also explain how to use docker for for node js application so that this application can be run from any operating system platform
 ## Getting Started
 
-### Dependencies
+### prerequisites
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* 10 metamask addresses , Github versioning control setup, Infura Token , Remix IDE , Linux terminal to run node js application.
 
 ### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
+* 1.Git clone
+ ```
+git clone https://github.com/agrawallalit/NCI_Blockchain
 ```
-code blocks for commands
+*2. Modify DeployedContract.sol as per below (you can change contract name , _name and _symbol values as you wish)
 ```
-
-## Help
-
-Any advise for common problems or issues.
+line:146 : contract X21166374ERC20 is Context, IERC20, IERC20Metadata{ ..
 ```
-command to run if program contains helper info
+```
+line:166 : _name = "X21166374TOKEN";
+          _symbol = "MSCloud";
 ```
 
-## Authors
+### Compile and then deploy X21166374ERC20 contract on Remix IDE 
 
-Contributors names and contact info
+* Modify .env file for actual values please refer .env file form above repository.
+```
+INFURA_TOKEN= < Infura Project Token >
+CONTRACT_ADDRESS= < Address of Contract deployed>
+OWNER_ADDRESS= < Metamask Account ID >
+PRIVATE_KEY= < Private from Metamask Account >
+```
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+###Open Linux terminal
 
-## Version History
+### install for envionment dependencies using NPM (Node Package Manager) as follow.
+```
+npm i fs big-number dotenv ethereumjs-tx web3
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+```
 
-## License
+### Remove node_modules as below cmd
+```
+\rm node_modules
+```
+### Reinstall node_modules as below
+```
+npm i
+```
+### Now run distribute.js as per below cmd and select hash transaction value from below output and search same in etherscan to see token distribution. 
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+```
+node distribute.js
+```
 
-## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
