@@ -35,7 +35,7 @@ OWNER_ADDRESS= < Metamask Account ID >
 PRIVATE_KEY= < Private from Metamask Account >
 ```
 
-###Open Linux terminal
+### Open Linux terminal
 
 ### install for envionment dependencies using NPM (Node Package Manager) as follow.
 ```
