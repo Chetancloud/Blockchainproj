@@ -58,3 +58,23 @@ node distribute.js
 ```
 ### To Run through Docker images follow below steps: 
 * 1.create Docker file in working directory   
+```
+touch Dockerfile
+
+```
+* 2.Then make directory as x21166374-bc  and add node js application releated files  and dependencies files in it.
+```
+mkdir x21166374-bc
+```
+* 3.Now, for that run below cmd to build Docker image with username/repository
+```
+docker build -t chetancloud/x21166374-bc .
+```
+* 4 Now you can Push this local repository to remote repositaries at docker hub from Docker application click to Push To Hub
+* 5 Now,you can Pull and run this docker image using below commands
+```
+docker pull chetancloud/x21166374-bc 
+
+docker run chetancloud/x21166374-bc
+
+```
