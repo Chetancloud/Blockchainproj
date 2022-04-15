@@ -56,5 +56,5 @@ npm i
 ```
 node distribute.js
 ```
-
-
+### To Run through Docker images follow below steps: 
+* 1.create Docker file in working directory   
